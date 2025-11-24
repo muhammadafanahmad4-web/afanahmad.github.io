@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Tools Hub — Sabse Best AI Tools Ek Jagah</title>
+  <meta name="description" content="AI tools ke baare me simple guides, categories, aur best picks. Content, coding, design, automation sab kuch ek jagah." />
+  <style>
+    :root{
+      --bg:#0f1220;
+      --card:#171a2a;
+      --muted:#8b91a7;
+      --text:#e9ecf5;
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --success:#60d394;
+      --danger:#ff6b6b;
+      --ring: rgba(110,231,255,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0e1a, var(--bg));color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px, 92vw);margin:0 auto}
+    header{
+      position:sticky;top:0;backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(15,18,32,.7);border-bottom:1px solid rgba(255,255,255,.06);z-index:50
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:700;letter-spacing:.2px}
+    .logo{
+      width:34px;height:34px;border-radius:8px;background:
+        radial-gradient(60% 100% at 30% 20%, #6ee7ff 0%, transparent 60%),
+        radial-gradient(80% 120% at 80% 20%, #a78bfa 0%, transparent 70%),
+        linear-gradient(140deg, #1b1f33, #171a2a);
+      box-shadow:0 0 0 2px rgba(255,255,255,.06), 0 10px 30px rgba(167,139,250,.25)
+    }
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+    .nav-links a{padding:.4rem .7rem;border-radius:8px}
+    .nav-links a:hover{background-color:rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg,var(--accent),var(--accent2));
+      color:#0b0e1a;padding:.6rem 1rem;border-radius:999px;font-weight:700;border:none
+    }
+    .cta span{display:inline-block;transform:translateY(1px)}
+    .hero{padding:3.5rem 0 2rem}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem}
+    .hero h1{font-size:clamp(1.8rem, 4vw, 2.6rem);line-height:1.15;margin:.3rem 0 1rem}
+    .hero p{color:var(--muted);font-size:1.05rem;margin:0 0 1.3rem}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;border:1px dashed rgba(255,255,255,.18);
+      padding:.4rem .7rem;border-radius:999px;color:var(--accent)}
+    .highlight{
+      background:linear-gradient(180deg, rgba(110,231,255,.08), rgba(167,139,250,.06));
+      border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1rem
+    }
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+    .stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1rem;text-align:center}
+    .stat .big{font-size:1.4rem;font-weight:800}
+    .section{padding:2rem 0}
+    .section h2{font-size:1.6rem;margin:0 0 .8rem}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.06);
+      border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.6rem
+    }
+    .card h3{margin:.2rem 0;font-size:1.1rem}
+    .badge{display:inline-flex;gap:.4rem;align-items:center;background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:.3rem .6rem;font-size:.85rem}
+    .list{display:grid;gap:.5rem}
+    .list li{list-style:none}
+    .list b{color:#fff}
+    .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem}
+    .tag{font-size:.8rem;color:var(--muted);border:1px solid rgba(255,255,255,.08);padding:.2rem .5rem;border-radius:999px}
+    .table-wrap{overflow:auto;border:1px solid rgba(255,255,255,.08);border-radius:12px}
+    table{width:100%;border-collapse:collapse;background:var(--card)}
+    th, td{padding:.8rem;border-bottom:1px solid rgba(255,255,255,.06);text-align:left}
+    th{background:rgba(255,255,255,.06)}
+    .good{color:var(--success);font-weight:700}
+    .ok{color:var(--accent);font-weight:700}
+    .warn{color:var(--danger);font-weight:700}
+    .faq{display:grid;gap:.8rem}
+    details{
+      background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.8rem
+    }
+    summary{cursor:pointer;font-weight:700}
+    footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+    .search{
+      display:flex;gap:.7rem;align-items:center;background:var(--card);
+      border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.6rem .8rem
+    }
+    input[type="text"]{
+      flex:1;background:transparent;border:none;outline:none;color:var(--text)
+    }
+    .ring{box-shadow:0 0 0 6px var(--ring)}
+    /* Responsive */
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:680px){
+      .nav{padding:.7rem 0}
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>AI Tools Hub</div>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#categories">Categories</a>
+        <a href="#popular">Popular</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="cta" href="#contact"><span>Get started</span> ➜</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="pill">⚡ Smart picks • No fluff</div>
+          <h1>AI tools jo kaam sach me tez karte hain</h1>
+          <p>Content likhna, code debug karna, design banana, ya workflows automate karna — sabke liye curated tools aur honest highlights.</p>
+          <div class="search" role="search">
+            <input type="text" placeholder="Search tools (e.g., 'writing', 'image', 'code')" aria-label="Search tools" />
+            <button class="cta" type="button">Search</button>
+          </div>
+          <p class="muted">Tip: Mobile pe bhi lightning fast — bina heavy libraries ke.</p>
+        </div>
+        <div class="highlight">
+          <div class="stats">
+            <div class="stat">
+              <div class="big">25+</div>
+              <div class="muted">Categories</div>
+            </div>
+            <div class="stat">
+              <div class="big">120+</div>
+              <div class="muted">Tools listed</div>
+            </div>
+            <div class="stat">
+              <div class="big">90%</div>
+              <div class="muted">Time saved avg</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:1rem">Curated by practitioners. Har tool ke saath clear use-case aur quick verdict.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section">
+      <h2>Categories</h2>
+      <p class="muted">Use-case ke hisaab se explore karo: writing, code, design, marketing, research, automation.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">✍️ Content & copy</span>
+          <h3>Writing assistants</h3>
+          <ul class="list">
+            <li><b>Long-form drafts:</b> Blogs, scripts, articles</li>
+            <li><b>Short-form:</b> Captions, ad copy, email replies</li>
+            <li><b>Tone control:</b> Formal, casual, persuasive</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Hindi + English</span>
+            <span class="tag">Style guides</span>
+            <span class="tag">SEO hints</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">💻 Dev & data</span>
+          <h3>Coding copilots</h3>
+          <ul class="list">
+            <li><b>Autocomplete:</b> Faster coding</li>
+            <li><b>Debug help:</b> Error insights</li>
+            <li><b>Docs Q&A:</b> Ask libraries</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python/JS</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Tests</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">🎨 Design & media</span>
+          <h3>Image/video tools</h3>
+          <ul class="list">
+            <li><b>Brand visuals:</b> Logos, mockups</li>
+            <li><b>Edits:</b> Background, upscale</li>
+            <li><b>Video scripts:</b> Subtitles, cuts</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Templates</span>
+            <span class="tag">Stock-lite</span>
+            <span class="tag">Social-ready</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">📈 Marketing</span>
+          <h3>Ads & analytics</h3>
+          <ul class="list">
+            <li><b>Ad drafts:</b> Google/Meta</li>
+            <li><b>A/B ideas:</b> Variants</li>
+            <li><b>Audience:</b> Persona help</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">UTMs</span>
+            <span class="tag">KPIs</span>
+            <span class="tag">Playbooks</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">🔎 Research</span>
+          <h3>Knowledge assistants</h3>
+          <ul class="list">
+            <li><b>Summaries:</b> PDFs, links</li>
+            <li><b>Citations:</b> References</li>
+            <li><b>Notes:</b> Flashcards</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Academic</span>
+            <span class="tag">Reports</span>
+            <span class="tag">Briefs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge">⚙️ Automation</span>
+          <h3>Workflows & ops</h3>
+          <ul class="list">
+            <li><b>Email:</b> Replies & routing</li>
+            <li><b>Sheets:</b> Cleanup & sync</li>
+            <li><b>CRM:</b> Notes & tasks</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">No-code</span>
+            <span class="tag">Zap-like</span>
+            <span class="tag">Triggers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="popular" class="section">
+      <h2>Popular tools (quick picks)</h2>
+      <p class="muted">Har tool ke saath ek 10-second verdict — kis kaam me best, aur kab avoid karein.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">✍️ Writer</span>
+          <h3>StoryCraft</h3>
+          <p class="muted">Long-form Hindi/English blogs ke liye solid structure + tone controls.</p>
+          <ul class="list">
+            <li><b>Best for:</b> Research-backed articles</li>
+            <li><b>Avoid for:</b> Hyper-technical citations</li>
+          </ul>
+          <div class="tags"><span class="tag">Outline</span><span class="tag">SEO</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge">💻 Dev</span>
+          <h3>CodePilot</h3>
+          <p class="muted">Autocomplete + quick fix suggestions — beginners ke liye friendly.</p>
+          <ul class="list">
+            <li><b>Best for:</b> JS/Python snippets</li>
+            <li><b>Avoid for:</b> Large codebases</li>
+          </ul>
+          <div class="tags"><span class="tag">Debug</span><span class="tag">Docs Q&A</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge">🎨 Design</span>
+          <h3>PixelForge</h3>
+          <p class="muted">Quick social creatives + brand-safe palettes.</p>
+          <ul class="list">
+            <li><b>Best for:</b> Reels covers, thumbnails</li>
+            <li><b>Avoid for:</b> Enterprise DAM</li>
+          </ul>
+          <div class="tags"><span class="tag">Templates</span><span class="tag">Upscale</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="section">
+      <h2>Compare at a glance</h2>
+      <div class="table-wrap">
+        <table aria-label="AI tool comparison">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Strength</th>
+              <th>Weakness</th>
+              <th>Pricing</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>StoryCraft</td>
+              <td>Outlines + tone control</td>
+              <td>Limited citations</td>
+              <td>Free + Pro</td>
+              <td class="good">Writer-friendly</td>
+            </tr>
+            <tr>
+              <td>CodePilot</td>
+              <td>Autocomplete + fixes</td>
+              <td>Big repos struggle</td>
+              <td>Pro only</td>
+              <td class="ok">Good for starters</td>
+            </tr>
+            <tr>
+              <td>PixelForge</td>
+              <td>Fast templates</td>
+              <td>Advanced layers</td>
+              <td>Free</td>
+              <td class="good">Social-ready</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Pricing aur verdict placeholders hain — apne tools ke hisaab se edit kar sakte ho.</p>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>AI tools ka best use-case kaise choose karein?</summary>
+          <p class="muted">Pehle problem define karo (e.g., “daily social posts”). Fir category chuno, aur 1–2 tools ko trial me compare karo.</p>
+        </details>
+        <details>
+          <summary>Hindi me content generation sahi aata hai?</summary>
+          <p class="muted">Haan, short-form me bahut achha. Long-form me thoda edit/verify karna padta hai, especially citations ke liye.</p>
+        </details>
+        <details>
+          <summary>Kya ye site offline chal sakti hai?</summary>
+          <p class="muted">Ye page lightweight hai aur bina JS bhi kaam karta hai. Search button demo hai — aap baad me JS add kar sakte ho.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Suggest a tool</h2>
+      <p class="muted">Koi naya tool pasand hai? Add karwana hai? Niche details bhejo:</p>
+      <form class="card" aria-label="Suggest a tool">
+        <label>
+          Naam:
+          <input type="text" placeholder="Tool name" style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)" />
+        </label>
+        <label>
+          Category:
+          <input type="text" placeholder="e.g., writing, code, design" style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)" />
+        </label>
+        <label>
+          Why is it good?
+          <input type="text" placeholder="Quick reason" style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text)" />
+        </label>
+        <button class="cta" type="button" style="width:max-content">Submit</button>
+        <small class="muted">Note: Demo form — backend add karna hoga.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 AI Tools Hub — Minimal, fast, useful.</p>
+      <p class="muted">Built with semantic HTML & CSS. No trackers. Edit and deploy easily.</p>
+    </div>
+  </footer>
+</body>
+</html>
